@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace IsLeapYear
 {
@@ -6,20 +6,48 @@ namespace IsLeapYear
     {
         static void Main(string[] args)
         {
+            int isleap = 0;
 
             Console.WriteLine("Enter the year in YYYY ");
             int year = Convert.ToInt32(Console.ReadLine());
 
-            if ((year % 100 == 0) && (year % 400 == 0) && (year % 4 == 0))
+            if ((year % 4) != 0)
             {
-                Console.WriteLine("Entered year is a LEAP YEAR");
+            }
+
+            else if ((year % 400) == 0)
+            {
+
+                isleap = 1;
+
+            }
+
+            else if ((year % 100) == 0)
+            {
+
+
             }
             else
             {
-                Console.WriteLine("Entered year is not a LEAP YEAR");
+                isleap = 1;
             }
 
-            Console.ReadLine();
+
+
+            if (isleap == 1)
+            {
+                Console.WriteLine("Its a LeapYear");
+            }
+            else
+            {
+                Console.WriteLine("Not a Leapyear");
+            }
+
+            Console.ReadKey();
+
         }
+
+
+        
     }
 }
